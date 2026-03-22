@@ -1,0 +1,15 @@
+# Render Blueprint — import this repo in Render → New Blueprint Instance
+# Or create a Web Service manually: Root Directory = backend, Start = npm start
+
+services:
+  - type: web
+    name: virnova-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
